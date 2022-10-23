@@ -24,18 +24,5 @@ Our inputs: masked squares
 Easy, right? Humans are able to leverage &amp;ldquo;long-range&amp;rdquo; (across image) information in order to determine that each image contains a single square, and the masked squares should be replaced with the correct colors that will make this square.</description>
     </item>
     
-    <item>
-      <title>Using BeRT for inpainting squares</title>
-      <link>https://aneeldamaraju.github.io/ResearchBlog/posts/firstpost/10-25-2022-maskgit-weekly/</link>
-      <pubDate>Thu, 20 Oct 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://aneeldamaraju.github.io/ResearchBlog/posts/firstpost/10-25-2022-maskgit-weekly/</guid>
-      <description>A motivating toy problem Suppose I give you a prior in the form of a set of images of black and white squares on an axis-aligned grid.
-Our prior: squares on a grid
-Next, I give you the following images, and ask you to replace the gray (&amp;ldquo;masked&amp;rdquo;) squares with either black or white squares in order to fit your prior.
-Our inputs: masked squares
-Easy, right? Humans are able to leverage &amp;ldquo;long-range&amp;rdquo; (across image) information in order to determine that each image contains a single square, and the masked squares should be replaced with the correct colors that will make this square.</description>
-    </item>
-    
   </channel>
 </rss>

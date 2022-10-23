@@ -44,10 +44,39 @@ Popular deep learning models in computer vision are built off of the back of Con
 
 So instead of a CNN, we can instead use a bidirectional transformer (BERT) to solve our toy problem. BERT explicitly computes these long range interactions between squares in the image in the form of attention. 
 
+# A note on quantization
+
+BERT was initially developed as a natural language processing (NLP)model, so the authours had to find a way to convert the input words into numbers that can be interpreted by a neural network. BERT uses a common NLP approach, mapping each word to a a scalar, e.g. it's index in a dictionary. Drawing analog to a black and white image, it makes sense to have a mapping dictionary consisting of two entries: ```black -> 0, white -> 1```. For our example, we can represent the masked patches as a third dictionary entry ```[mask] -> 2```.
+
+This idea of mapping elements to scalars can be extended to more complex images, and even to patches of images (check out vector quantized gans)! In particular, representing an image as quantized patch can be helpful in reducing the number of transformer parameters by reducing the number of attention weights calculated.   
+
+
+# The key parts of the BERT model
+
+As commonly implemented, BERT is very simple (or at least more simple than the name would imply). 
+
+For an image with some masked patches, BERT predicts the true value of the masked patch through a couple of key steps.
+
+1. **Embed** the information of the patch (quantized color and positional information (link?)). 
+2. **Update** the patch embedding with the *attention-based weightings* with all other patches.
+3. **Predict** the true value of the patch, usually through the use of a simple multi-layer perceptron (MLP) neural network.
+
+# Model specifics
+
+## Input data
+
+As shown in the motivating examples, each image in the training set is a 8x8 black and white image.  
+
+## Embedding
+
+### Learned Feature embeddings
+
+
+
 # How to insert pictures?
 
 ![Image](/posts/Firstpost/test_graph.png)
-<img src="/posts/Firstpost/test_graph.png" alt="drawing" width="200"/>
+
 
 # How to insert videos?
 

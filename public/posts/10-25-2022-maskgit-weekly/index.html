@@ -254,7 +254,7 @@ Easy, right? Humans are able to leverage &ldquo;long-range&rdquo; (across image)
 
 <p>Next, I give you the following images, and ask you to replace the gray (&ldquo;masked&rdquo;) squares with either black or white squares in order to fit your prior.</p>
 <figure class="align-center ">
-    <img loading="lazy" src="./images/MaskedSample2.png#center"
+    <img loading="lazy" src="images/MaskedSample2.png#center"
          alt="Our inputs: masked squares" width="400"/> <figcaption>
             <p>Our inputs: masked squares</p>
         </figcaption>
@@ -262,7 +262,7 @@ Easy, right? Humans are able to leverage &ldquo;long-range&rdquo; (across image)
 
 <p>Easy, right? Humans are able to leverage &ldquo;long-range&rdquo; (across image) information in order to determine that each image contains a single square, and the masked squares should be replaced with the correct colors that will make this square.</p>
 <figure class="align-center ">
-    <img loading="lazy" src="../images/MasktoPrior.png#center"
+    <img loading="lazy" src="images/MasktoPrior.png#center"
          alt="Our goal: Train a network to recover the squares" width="800"/> <figcaption>
             <p>Our goal: Train a network to recover the squares</p>
         </figcaption>
@@ -365,7 +365,7 @@ However this is not the only way implement positional encodings, so do not be su
 <p>At every epoch each image is randomly masked following the masking scheme presented before. The images as well as their masked versions are passed into the model, with the goal of predicting the original image from the masked one.</p>
 <p>However, it does not seem to work! This is what the training loss looks like</p>
 <figure class="align-center ">
-    <img loading="lazy" src="/posts/Firstpost/TrainingLoss.png#center"
+    <img loading="lazy" src="images/TrainingLoss.png#center"
          alt="Training loss fails to converge" width="400"/> <figcaption>
             <p>Training loss fails to converge</p>
         </figcaption>

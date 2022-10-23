@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on My New Hugo Site</title>
-    <link>http://example.org/posts/</link>
+    <link>https://aneeldamaraju.github.io/ResearchBlog/posts/</link>
     <description>Recent content in Posts on My New Hugo Site</description>
     <image>
-      <url>http://example.org/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>http://example.org/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://aneeldamaraju.github.io/ResearchBlog/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://aneeldamaraju.github.io/ResearchBlog/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 20 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 20 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://aneeldamaraju.github.io/ResearchBlog/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Using BeRT for inpainting squares</title>
-      <link>http://example.org/posts/firstpost/firstpost/</link>
+      <link>https://aneeldamaraju.github.io/ResearchBlog/posts/firstpost/firstpost/</link>
       <pubDate>Thu, 20 Oct 2022 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/firstpost/firstpost/</guid>
+      <guid>https://aneeldamaraju.github.io/ResearchBlog/posts/firstpost/firstpost/</guid>
       <description>A motivating toy problem Suppose I give you a prior in the form of a set of images of black and white squares on an axis-aligned grid.
 Our prior: squares on a grid
 Next, I give you the following images, and ask you to replace the gray (&amp;ldquo;masked&amp;rdquo;) squares with either black or white squares in order to fit your prior.

@@ -13,10 +13,10 @@
     <lastBuildDate>Thu, 20 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://aneeldamaraju.github.io/ResearchBlog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Using BeRT for inpainting squares</title>
-      <link>https://aneeldamaraju.github.io/ResearchBlog/posts/10-25-2022-maskgit-weekly/10-25-2022-maskgit-weekly/</link>
+      <link>https://aneeldamaraju.github.io/ResearchBlog/posts/10-25-2022-maskgit-weekly/</link>
       <pubDate>Thu, 20 Oct 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://aneeldamaraju.github.io/ResearchBlog/posts/10-25-2022-maskgit-weekly/10-25-2022-maskgit-weekly/</guid>
+      <guid>https://aneeldamaraju.github.io/ResearchBlog/posts/10-25-2022-maskgit-weekly/</guid>
       <description>A motivating toy problem Suppose I give you a prior in the form of a set of images of black and white squares on an axis-aligned grid.
 Our prior: squares on a grid
 Next, I give you the following images, and ask you to replace the gray (&amp;ldquo;masked&amp;rdquo;) squares with either black or white squares in order to fit your prior.

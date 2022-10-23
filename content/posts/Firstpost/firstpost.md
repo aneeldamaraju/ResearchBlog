@@ -45,7 +45,7 @@ Next, I give you the following images, and ask you to replace the gray ("masked"
 
 Easy, right? Humans are able to leverage "long-range" (across image) information in order to determine that each image contains a single square, and the masked squares should be replaced with the correct colors that will make this square.
 
-{{< figure src="/MasktoPrior.png" width="800" caption="Our goal: Train a network to recover the squares" align="center">}}
+{{< figure src="MasktoPrior.png" width="800" caption="Our goal: Train a network to recover the squares" align="center">}}
 
 ### So why do we care about this simple example?
 Popular deep learning models in computer vision are built off of the back of Convolutional neural networks (CNNs), where neurons in the network each have a limited receptive field size. If the size of the receptive field is too small, the network will not have the ability to incorporate long-range information into it's inference. 

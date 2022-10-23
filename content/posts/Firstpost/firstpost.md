@@ -31,7 +31,7 @@ cover:
     relative: false # when using page bundles set this to true
     hidden: true # only hide on current single page
 ---
-# A motivating toy problem
+## A motivating toy problem
 
 Suppose I give you a prior in the form of a set of images of black and white squares on an axis-aligned grid. (sample image here)
 
@@ -39,7 +39,7 @@ Next, I give you the following images, and ask you to replace the gray ("masked"
 
 Easy, right? Humans are able to leverage "long-range" (across image) information in order to determine that each image contains a single square, and the masked squares should be replaced with the correct colors that will make this square.
 
-## So why do we care about this simple example?
+### So why do we care about this simple example?
 Popular deep learning models in computer vision are built off of the back of Convolutional neural networks (CNNs), where neurons in the network each have a limited receptive field size. If the size of the receptive field is too small, the network will not have the ability to incorporate long-range information into it's inference. 
 
 So instead of a CNN, we can instead use a bidirectional transformer (BERT) to solve our toy problem. BERT explicitly computes these long range interactions between squares in the image in the form of attention. 
@@ -53,7 +53,7 @@ So instead of a CNN, we can instead use a bidirectional transformer (BERT) to so
 
 {{< video src = "/posts/Firstpost/ArchBoundaries_R21.mp4">}}
 
-### Examples
+## Examples
 
 
 Inline math: $\(\varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887…\)$

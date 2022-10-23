@@ -11,7 +11,7 @@ draft: false
 hidemeta: false
 comments: false
 #description: "Desc Text."
-canonicalURL: "https://canonical.url/to/page"
+canonicalURL: "https://aneeldamaraju.github.io/ResearchBlog/posts/firstpost/firstpost/"
 disableHLJS: true # to disable highlightjs
 disableShare: true
 disableHLJS: false

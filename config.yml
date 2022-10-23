@@ -66,12 +66,7 @@ params:
     Content: However, I have no content!
 
   socialIcons:
-    - name: twitter
-      url: "https://twitter.com/"
-    - name: stackoverflow
-      url: "https://stackoverflow.com"
-    - name: github
-      url: "https://github.com/"
+
 
   analytics:
     google:

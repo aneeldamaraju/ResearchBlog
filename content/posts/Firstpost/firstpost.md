@@ -36,16 +36,16 @@ cover:
 Suppose I give you a prior in the form of a set of images of black and white squares on an axis-aligned grid.
 
 
-{{< figure src="/posts/Firstpost/PriorSample.png" width="400" caption="Our prior: squares on a grid" align="center">}}
+{{< figure src="images/PriorSample.png" width="400" caption="Our prior: squares on a grid" align="center">}}
 
 
 Next, I give you the following images, and ask you to replace the gray ("masked") squares with either black or white squares in order to fit your prior. 
 
-{{< figure src="/Firstpost/MaskedSample2.png" width="400" caption="Our inputs: masked squares" align="center">}}
+{{< figure src="images/MaskedSample2.png" width="400" caption="Our inputs: masked squares" align="center">}}
 
 Easy, right? Humans are able to leverage "long-range" (across image) information in order to determine that each image contains a single square, and the masked squares should be replaced with the correct colors that will make this square.
 
-{{< figure src="MasktoPrior.png" width="800" caption="Our goal: Train a network to recover the squares" align="center">}}
+{{< figure src="images/MasktoPrior.png" width="800" caption="Our goal: Train a network to recover the squares" align="center">}}
 
 ### So why do we care about this simple example?
 Popular deep learning models in computer vision are built off of the back of Convolutional neural networks (CNNs), where neurons in the network each have a limited receptive field size. If the size of the receptive field is too small, the network will not have the ability to incorporate long-range information into it's inference. 

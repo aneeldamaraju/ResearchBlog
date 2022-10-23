@@ -41,7 +41,7 @@ Suppose I give you a prior in the form of a set of images of black and white squ
 
 Next, I give you the following images, and ask you to replace the gray ("masked") squares with either black or white squares in order to fit your prior. 
 
-{{< figure src="./images/MaskedSample2.png" width="400" caption="Our inputs: masked squares" align="center">}}
+{{< figure src="../images/MaskedSample2.png" width="400" caption="Our inputs: masked squares" align="center">}}
 
 Easy, right? Humans are able to leverage "long-range" (across image) information in order to determine that each image contains a single square, and the masked squares should be replaced with the correct colors that will make this square.
 

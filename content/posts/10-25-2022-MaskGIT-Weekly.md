@@ -154,18 +154,48 @@ However, it does not seem to work! This is what the training loss looks like
 
 So this didn't work! One sanity check we can do is make sure that the network is able to correctly decide that it learn the identity mapping (i.e. do nothing) when there is no mask. Beyond just checking if the code works, this can be used to as an initialization for the network when masks are introduced, or motivation for a different masking schedule than used for MaskGIT.
 
-
-
-
 ### No mask training
 
 This model does seem to converge to the correct results! The loss seems to go to zero. 
 
-{{< figure src="images/TrainingLoss_NoMask.png" width="400" caption="Without including masking, the model converges quickly!" align="center">}}
+{{< figure src="images/TrainingLoss_NoMask.png" width="400" caption="Without including masking, the model converges quickly! Training time: ~10 mins" align="center">}}
 
-Lets check some random examples of this!  (Note: I cherry pick the negative example from a set of mostly positive results)
+Lets check some random examples of this!  
 
-Lets see empirically how this performs on the masked task! The resulting 
-### Finetuning this model by addition of masks
+{{< figure src="images/Inference_NoMask.png" width="400" caption="For this trivial task, the model is able to complete it well" align="center">}}
 
-Now that we have a network that can take maskless embedded images and transform them in a reasonable way, lets use this as an initialization for the previous task. 
+### Training with constant masking ratio
+
+Rather than letting $\gamma(r)$ vary from 0 to 1 randomly, we can fix the "masking ratio" at masking 20% of the image, which should make the training easier (since the problem is now easier). 
+
+{{< figure src="images/TrainingLoss_ConstMask_400epochs.png" width="400" caption="Using small masking ratio, we can see the loss decreasing to ~5." align="center">}}
+
+Looks like making this problem easier helps a good amount! See preliminary results section for example results. 
+
+### Finetuning the maskless model
+
+Note that previously, we trained a network that can take maskless embedded images and transform them in a reasonable way, lets use this as an initialization for the previous task of masking 20% of an image. 
+
+{{< figure src="images/MaskRatio_RampMask_400epochs.png" width="400" caption="A simple linear interpolation scheme increasing the ratio of patches masked during training" align="center">}}
+
+In theory, this schedule should allow the training loss to remain low as the training progresses. After training the model, here is the resulting loss curve. 
+
+{{< figure src="images/TrainingLoss_RampMask_400epochs.png" width="400" caption="The resulting loss curve using a linear interpolation of masking ratio. Training time: ~1 hr" align="center">}}
+
+This actually works worse than the other approach, but just for completeness, let's see how this effects the model!
+
+### Preliminary inpainting results
+
+#### Constant mask ratio
+
+Since this result had the lower loss, we expect decent results! I've included a random sampling of results to:
+ 1. Demonstrate what "20% masking" looks like
+ 2. Show that this model works decently well 
+
+{{< figure src="images/Inference_20ConstMask_400epochs_tiled.png" width="400" caption="Using the linear interpolation scheme, these are some inpainting results." align="center">}}
+
+#### Ramping mask
+
+Qualitiatively, it looks like this approach leads to the model choosing the masked patch as "white" most of the time. See results below!
+
+{{< figure src="images/Inference_20RampMask_400epochs_tiled.png" width="400" caption="Using the linear interpolation scheme, these are some inpainting results." align="center">}}

@@ -168,7 +168,7 @@ Lets check some random examples of this!
 
 Rather than letting $\gamma(r)$ vary from 0 to 1 randomly, we can fix the "masking ratio" at masking 20% of the image, which should make the training easier (since the problem is now easier). 
 
-{{< figure src="images/TrainingLoss_ConstMask_400epochs.png" width="400" caption="Using small masking ratio, we can see the loss decreasing to ~5." align="center">}}
+{{< figure src="images/TrainingLoss_ConstMask_400epochs.png" width="400" caption="Using small masking ratio, we can see the loss decreasing to ~5. Training time: ~1 hr" align="center">}}
 
 Looks like making this problem easier helps a good amount! See preliminary results section for example results. 
 
@@ -192,10 +192,10 @@ Since this result had the lower loss, we expect decent results! I've included a 
  1. Demonstrate what "20% masking" looks like
  2. Show that this model works decently well 
 
-{{< figure src="images/Inference_20ConstMask_400epochs_tiled.png" width="400" caption="Using the linear interpolation scheme, these are some inpainting results." align="center">}}
+{{< figure src="images/Inference_20ConstMask_400epochs_tiled.png" width="400" caption="Inpainting with the model referenced in the constant masking ratio section." align="center">}}
 
 #### Ramping mask
 
 Qualitiatively, it looks like this approach leads to the model choosing the masked patch as "white" most of the time. See results below!
 
-{{< figure src="images/Inference_20RampMask_400epochs_tiled.png" width="400" caption="Using the linear interpolation scheme, these are some inpainting results." align="center">}}
+{{< figure src="images/Inference_20RampMask_400epochs_tiled.png" width="400" caption="Inpainting using the linear interpolation scheme." align="center">}}

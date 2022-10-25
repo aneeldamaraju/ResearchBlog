@@ -53,7 +53,7 @@ So instead of a CNN, we can instead use a bidirectional transformer (BERT) to so
 
 # A note on quantization
 
-BERT was initially developed as a natural language processing (NLP) model, so the authours had to find a way to convert the input words into numbers that can be interpreted by a neural network. BERT uses a common NLP approach, mapping each word to a a scalar, e.g. it's index in a dictionary. Drawing analog to a black and white image, it makes sense to have a mapping dictionary consisting of two entries: ```black -> 0, white -> 1```. For our example, we can represent the masked patches as a third dictionary entry ```[mask] -> 2```.
+BERT was initially developed as a natural language processing (NLP) model, so the authors had to find a way to convert the input words into numbers that can be interpreted by a neural network. BERT uses a common NLP approach, mapping each word to a a scalar, e.g. it's index in a dictionary. Drawing analog to a black and white image, it makes sense to have a mapping dictionary consisting of two entries: ```black -> 0, white -> 1```. For our example, we can represent the masked patches as a third dictionary entry ```[mask] -> 2```.
 
 This idea of mapping elements to scalars can be extended to more complex images, and even to patches of images (check out vector quantized gans)! In particular, representing an image as quantized patch can be helpful in reducing the number of transformer parameters by reducing the number of attention weights calculated.   
 
@@ -148,3 +148,24 @@ At every epoch each image is randomly masked following the masking scheme presen
 However, it does not seem to work! This is what the training loss looks like
 
 {{< figure src="images/TrainingLoss.png" width="400" caption="Training loss fails to converge" align="center">}}
+
+
+## Alternative approaches
+
+So this didn't work! One sanity check we can do is make sure that the network is able to correctly decide that it learn the identity mapping (i.e. do nothing) when there is no mask. Beyond just checking if the code works, this can be used to as an initialization for the network when masks are introduced, or motivation for a different masking schedule than used for MaskGIT.
+
+
+
+
+### No mask training
+
+This model does seem to converge to the correct results! The loss seems to go to zero. 
+
+{{< figure src="images/TrainingLoss_NoMask.png" width="400" caption="Without including masking, the model converges quickly!" align="center">}}
+
+Lets check some random examples of this!  (Note: I cherry pick the negative example from a set of mostly positive results)
+
+Lets see empirically how this performs on the masked task! The resulting 
+### Finetuning this model by addition of masks
+
+Now that we have a network that can take maskless embedded images and transform them in a reasonable way, lets use this as an initialization for the previous task. 

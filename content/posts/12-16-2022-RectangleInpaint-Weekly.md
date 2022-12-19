@@ -36,6 +36,14 @@ cover:
 
 Since the last report, the inpainting task from the last report ended up working pretty well! One large change made for stabilization is that each individual training image is shown to the model multiple times in a row (Presentations per Epoch) to stabilize training. This seemed to work, but may promote memorizing, i.e. worse generalization! Here are the parameters used in the successful trial:
 
+
+{{<table "table table-striped table-bordered">}}
+|———-|———-|———-|
+| Item 1   | Item 2   | Item 3   |
+| Item 1a  | Item 2a  | Item 3a  |
+{{</table>}}
+
+
 {{<table "table table-striped table-bordered">}}
 |———-|———-|
 | Embedding Dimensions | $640$   |

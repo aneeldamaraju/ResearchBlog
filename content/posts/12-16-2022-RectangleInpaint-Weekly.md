@@ -1,5 +1,5 @@
 ---
-title: "Using BeRT for inpainting squares Part 2"
+title: "Using BeRT for inpainting squares Part 2: BeRT for Rectangles"
 date: "2022-12-16"
 #author: "Me"
 
@@ -36,7 +36,7 @@ cover:
 
 Since the last report, the inpainting task from the last report ended up working pretty well! One large change made for stabilization is that each individual training image is shown to the model multiple times in a row (Presentations per Epoch) to stabilize training. This seemed to work, but may promote memorizing, i.e. worse generalization! Here are the parameters used in the successful trial:
 
-{{<table “table table-striped table-bordered">}}
+{{<table "table table-striped table-bordered">}}
 |———-|———-|
 | Embedding Dimensions | $640$   |
 | Transformer Latent Dim | $1600$  |
@@ -68,11 +68,11 @@ In our case, we do not need a quantization scheme as complex as a VQGAN, so we t
 #### Specifics
 To create this set of cluster centers, we generate 100 random rectangles of resolution $256 X 256$ and first downsample them to $16 X 16$. We use area downsampling to capture how many of the pixels were black or white.
 
-{{< figure src="images/DownsampledRectangle.png" width="800" caption=Generating a rectangle, and then downsampling with a factor of 16" align="center">}}
+{{< figure src="images/DownsampledRectangle.png" width="800" caption="Generating a rectangle, and then downsampling with a factor of 16" align="center">}}
 
 We then take every overlapping $4X4$ patch of this $16X16$ and flatten each of these patches into a length $16$ vector. These vectors are then clustered into 20 clusters. The cluster centers are shown below.
 
-{{< figure src="images/RectangleClusterCenters.png" width="800" caption=K-means clustering of patches of downsampled rectangles" align="center">}}
+{{< figure src="images/RectangleClusterCenters.png" width="800" caption="K-means clustering of patches of downsampled rectangles" align="center">}}
 
 
 ### First pass: Inpainting on a Grid

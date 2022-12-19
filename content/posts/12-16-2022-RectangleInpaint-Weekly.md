@@ -59,25 +59,25 @@ A second slightly harder task involves keeping all else equal and increasing the
 
 ## Moving from squares to rectangles
 
-Okay, so this step is not as simple as the title may make it sound. The big difference in this work compared to the previous experiments is that we massively increase the resolution of the input image to $256 X 256$. Since the number of transformer parameters scales ~quadratically with the number of input pixels, we have to apply a smart "downsampling" (or tokenization) technique so that the number of tokens is within a computationally feasible range (less than 1000). For natural images, a common tokenization technique is to use the quantizer from a pretrained vector-quantized GAN network. 
+Okay, so this step is not as simple as the title may make it sound. The big difference in this work compared to the previous experiments is that we massively increase the resolution of the input image to $256 \times 256$. Since the number of transformer parameters scales ~quadratically with the number of input pixels, we have to apply a smart "downsampling" (or tokenization) technique so that the number of tokens is within a computationally feasible range (less than 1000). For natural images, a common tokenization technique is to use the quantizer from a pretrained vector-quantized GAN network. 
 
 ### Quantization for rectangles
 
 In our case, we do not need a quantization scheme as complex as a VQGAN, so we try the more interpretable and easier to implement method of k-means clustering. Each cluster center will correspond to a token, and any patch can be mapped to the closest centroid, and assigned its corresponding token. 
 
 #### Specifics
-To create this set of cluster centers, we generate 100 random rectangles of resolution $256 X 256$ and first downsample them to $16 X 16$. We use area downsampling to capture how many of the pixels were black or white.
+To create this set of cluster centers, we generate 100 random rectangles of resolution $256 \times 256$ and first downsample them to $16 \times 16$. We use area downsampling to capture how many of the pixels were black or white.
 
 {{< figure src="images/DownsampledRectangle.png" width="800" caption="Generating a rectangle, and then downsampling with a factor of 16" align="center">}}
 
-We then take every overlapping $4X4$ patch of this $16X16$ and flatten each of these patches into a length $16$ vector. These vectors are then clustered into 20 clusters. The cluster centers are shown below.
+We then take every overlapping $4\times4$ patch of this $16\times16$ and flatten each of these patches into a length $16$ vector. These vectors are then clustered into 20 clusters. The cluster centers are shown below.
 
 {{< figure src="images/RectangleClusterCenters.png" width="800" caption="K-means clustering of patches of downsampled rectangles" align="center">}}
 
 
 ### First pass: Inpainting on a Grid
 
-In order to ensure that the previously created model was robust enough to classify the increased number of tokens from the quantization scheme for the rectangular problem, we test the efficacy of that model on this new task. For each rectangle, the model is fed all overlapping patches (for example, in a $16x16$ image the model is fed $13X13$ tokens). Like in the previous task, 20 percent of these tokens are masked out and the model tries to guess what these tokens are. At inference time, these tokens are then converted to grayscale images by replacing them with their corresponding cluster centroid, and stitched together to create an output image. This works well! Results are shown below.
+In order to ensure that the previously created model was robust enough to classify the increased number of tokens from the quantization scheme for the rectangular problem, we test the efficacy of that model on this new task. For each rectangle, the model is fed all overlapping patches (for example, in a $16x16$ image the model is fed $13\times13$ tokens). Like in the previous task, 20 percent of these tokens are masked out and the model tries to guess what these tokens are. At inference time, these tokens are then converted to grayscale images by replacing them with their corresponding cluster centroid, and stitched together to create an output image. This works well! Results are shown below.
 
 {{< figure src="images/RectangleGridInpainting1.png" width="800" align="center">}}
 {{< figure src="images/RectangleGridInpainting2.png" width="800" caption="Some test results of grid based rectangle inpainting" align="center">}}

@@ -40,14 +40,14 @@ Since the last report, the inpainting task from the last report ended up working
 <!-- {{<table "table table-striped table-bordered">}} -->
 | Parameter      | Value |
 | ----------- | ----------- |
-| Embedding Dimensions | $640$   |
-| Transformer Latent Dim | $1600$  |
-| Attention Heads | $8$ | 
-| Transformer Blocks | $6$ |
-| Num Epochs | $300$ | 
-| Training Images | ~ $180$ |
-| Presentations per Epoch| $40$ |
-| Learning Rate | $10^{-5}$| 
+| Embedding Dimensions | 640   |
+| Transformer Latent Dim | 1600  |
+| Attention Heads | 8 | 
+| Transformer Blocks | 6 |
+| Num Epochs | 300 | 
+| Training Images | ~ 180 |
+| Presentations per Epoch| 40 |
+| Learning Rate | 10^-5| 
 <!-- {{</table>}} -->
 
 To showcase the results, I use two similar problems. First is the problem of masking out a single pixel and seeing if the transformer can solve the task of correctly inpainting the results.

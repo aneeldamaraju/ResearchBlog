@@ -37,15 +37,8 @@ cover:
 Since the last report, the inpainting task from the last report ended up working pretty well! One large change made for stabilization is that each individual training image is shown to the model multiple times in a row (Presentations per Epoch) to stabilize training. This seemed to work, but may promote memorizing, i.e. worse generalization! Here are the parameters used in the successful trial:
 
 
-{{<table "table table-striped table-bordered">}}
-|———-|———-|———-|
-| Item 1   | Item 2   | Item 3   |
-| Item 1a  | Item 2a  | Item 3a  |
-{{</table>}}
-
-
-{{<table "table table-striped table-bordered">}}
-|———-|———-|
+<!-- {{<table "table table-striped table-bordered">}}
+|———-|———-| -->
 | Embedding Dimensions | $640$   |
 | Transformer Latent Dim | $1600$  |
 | Attention Heads | $8$ | 
@@ -54,7 +47,7 @@ Since the last report, the inpainting task from the last report ended up working
 | Training Images | ~ $180$ |
 | Presentations per Epoch| $40$ |
 | Learning Rate | $10^{-5}$| 
-{{</table>}}
+<!-- {{</table>}} -->
 
 To showcase the results, I use two similar problems. First is the problem of masking out a single pixel and seeing if the transformer can solve the task of correctly inpainting the results.
 

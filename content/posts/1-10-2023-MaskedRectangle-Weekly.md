@@ -1,6 +1,7 @@
 ---
 title: "Using BeRT for inpainting squares Part 3: Masked Rectangles (minor update)"
-date: "2022-1-10"
+date: "2022-12-16"
+
 #author: "Me"
 
 
@@ -38,7 +39,7 @@ Since the last report, some minor changes to the way that the data for the squar
 - The shapes of the rectangles were normalized so that their aspect ratios ranged from 1:1 to 1:2
 - The rectangles were all "approximately centered" such that the center of the image contains a point within the rectangle. This point along with the previous were meant to simulate centering and scaling the rectangles. This should make the positional encoding easier.
 
-{{< figure src="images/CenteredRectangle.png" width="200" caption="" align="center">}}
+{{< figure src="images/CenteredRectangle.png" width="200" caption="An example randomly generated rectangle" align="center">}}
 
 - Selected patches that correspond to unmasked regions are now centered along points on the edges of the rectangle. This more closely corresponds with the expected application of this model: *images that are represented as a sparse set of junctions*. 
 

@@ -80,8 +80,8 @@ The shapes of the rectangles were normalized so that their aspect ratios ranged 
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://aneeldamaraju.github.io/ResearchBlog/posts/1-10-2023-maskedrectangle-weekly/" />
 <meta property="og:image" content="https://aneeldamaraju.github.io/ResearchBlog/%3Cimage%20path/url%3E" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-12-16T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-12-16T00:00:00+00:00" /><meta property="og:site_name" content="Aneel&#39;s Research Blog" />
+<meta property="article:published_time" content="2023-01-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-01-10T00:00:00+00:00" /><meta property="og:site_name" content="Aneel&#39;s Research Blog" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://aneeldamaraju.github.io/ResearchBlog/%3Cimage%20path/url%3E" />
@@ -123,8 +123,8 @@ The shapes of the rectangles were normalized so that their aspect ratios ranged 
   "articleBody": "A brief update on previous results Since the last report, some minor changes to the way that the data for the squares is generated and fed into the model allowed for more general success of the model.\nThe shapes of the rectangles were normalized so that their aspect ratios ranged from 1:1 to 1:2 The rectangles were all “approximately centered” such that the center of the image contains a point within the rectangle. This point along with the previous were meant to simulate centering and scaling the rectangles. This should make the positional encoding easier. An example randomly generated rectangle\nSelected patches that correspond to unmasked regions are now centered along points on the edges of the rectangle. This more closely corresponds with the expected application of this model: images that are represented as a sparse set of junctions. With these small changes, the model performs much better. The accuracy of this model is around ~85%, which is pretty good for a 20 class classification task where many of the classes are very similar to each other.\nResulting input and outputs for the updated model\nA example practical application In order to test this model on a semi-practical set of toy problems, we extend the previous results to a set of occluded rectangles. Same rectangle as shown above, but the area in gray is not sampled\nIn this case all input locations randomly lie along the rectangle edge, but exclude points that are within the masked region. The model is then queried with points inside the masked region, resulting in inpainting using a sparse set of points in the image.\nResulting input and outputs for the toy problem\n",
   "wordCount" : "278",
   "inLanguage": "en",
-  "image":"https://aneeldamaraju.github.io/ResearchBlog/%3Cimage%20path/url%3E","datePublished": "2022-12-16T00:00:00Z",
-  "dateModified": "2022-12-16T00:00:00Z",
+  "image":"https://aneeldamaraju.github.io/ResearchBlog/%3Cimage%20path/url%3E","datePublished": "2023-01-10T00:00:00Z",
+  "dateModified": "2023-01-10T00:00:00Z",
   "author":{
     "@type": "Person",
     "name": "Me"
@@ -198,7 +198,7 @@ The shapes of the rectangles were normalized so that their aspect ratios ranged 
     <h1 class="post-title">
       Using BeRT for inpainting squares Part 3: Masked Rectangles (minor update)
     </h1>
-    <div class="post-meta"><span title='2022-12-16 00:00:00 +0000 UTC'>December 16, 2022</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;278 words&nbsp;·&nbsp;Me
+    <div class="post-meta"><span title='2023-01-10 00:00:00 +0000 UTC'>January 10, 2023</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;278 words&nbsp;·&nbsp;Me
 
 </div>
   </header> <div class="toc">
@@ -266,15 +266,10 @@ The shapes of the rectangles were normalized so that their aspect ratios ranged 
     <ul class="post-tags">
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://aneeldamaraju.github.io/ResearchBlog/posts/12-16-2022-rectangleinpaint-weekly/">
-    <span class="title">« Prev</span>
-    <br>
-    <span>Using BeRT for inpainting squares Part 2: BeRT for Rectangles</span>
-  </a>
-  <a class="next" href="https://aneeldamaraju.github.io/ResearchBlog/posts/10-25-2022-maskgit-weekly/">
+  <a class="next" href="https://aneeldamaraju.github.io/ResearchBlog/posts/12-16-2022-rectangleinpaint-weekly/">
     <span class="title">Next »</span>
     <br>
-    <span>Using BeRT for inpainting squares</span>
+    <span>Using BeRT for inpainting squares Part 2: BeRT for Rectangles</span>
   </a>
 </nav>
 

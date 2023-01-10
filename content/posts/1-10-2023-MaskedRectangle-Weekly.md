@@ -1,6 +1,6 @@
 ---
 title: "Using BeRT for inpainting squares Part 3: Masked Rectangles (minor update)"
-date: "2022-12-16"
+date: "2023-01-10"
 
 #author: "Me"
 

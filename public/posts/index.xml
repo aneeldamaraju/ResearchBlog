@@ -10,7 +10,17 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 16 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://aneeldamaraju.github.io/ResearchBlog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 10 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://aneeldamaraju.github.io/ResearchBlog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using BeRT for inpainting squares Part 3: Masked Rectangles (minor update)</title>
+      <link>https://aneeldamaraju.github.io/ResearchBlog/posts/1-10-2023-maskedrectangle-weekly/</link>
+      <pubDate>Tue, 10 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://aneeldamaraju.github.io/ResearchBlog/posts/1-10-2023-maskedrectangle-weekly/</guid>
+      <description>A brief update on previous results Since the last report, some minor changes to the way that the data for the squares is generated and fed into the model allowed for more general success of the model.
+The shapes of the rectangles were normalized so that their aspect ratios ranged from 1:1 to 1:2 The rectangles were all &amp;ldquo;approximately centered&amp;rdquo; such that the center of the image contains a point within the rectangle.</description>
+    </item>
+    
     <item>
       <title>Using BeRT for inpainting squares Part 2: BeRT for Rectangles</title>
       <link>https://aneeldamaraju.github.io/ResearchBlog/posts/12-16-2022-rectangleinpaint-weekly/</link>
@@ -18,16 +28,6 @@
       
       <guid>https://aneeldamaraju.github.io/ResearchBlog/posts/12-16-2022-rectangleinpaint-weekly/</guid>
       <description>A brief update on previous results Since the last report, the inpainting task from the last report ended up working pretty well! One large change made for stabilization is that each individual training image is shown to the model multiple times in a row (Presentations per Epoch) to stabilize training. This seemed to work, but may promote memorizing, i.e. worse generalization! Here are the parameters used in the successful trial:</description>
-    </item>
-    
-    <item>
-      <title>Using BeRT for inpainting squares Part 3: Masked Rectangles (minor update)</title>
-      <link>https://aneeldamaraju.github.io/ResearchBlog/posts/1-10-2023-maskedrectangle-weekly/</link>
-      <pubDate>Fri, 16 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://aneeldamaraju.github.io/ResearchBlog/posts/1-10-2023-maskedrectangle-weekly/</guid>
-      <description>A brief update on previous results Since the last report, some minor changes to the way that the data for the squares is generated and fed into the model allowed for more general success of the model.
-The shapes of the rectangles were normalized so that their aspect ratios ranged from 1:1 to 1:2 The rectangles were all &amp;ldquo;approximately centered&amp;rdquo; such that the center of the image contains a point within the rectangle.</description>
     </item>
     
     <item>

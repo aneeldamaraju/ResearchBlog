@@ -1,6 +1,6 @@
 ---
 title: "Using BeRT for inpainting squares Part 3: Masked Rectangles (minor update)"
-date: "2023-1-10"
+date: "2022-1-10"
 #author: "Me"
 
 
@@ -38,7 +38,7 @@ Since the last report, some minor changes to the way that the data for the squar
 - The shapes of the rectangles were normalized so that their aspect ratios ranged from 1:1 to 1:2
 - The rectangles were all "approximately centered" such that the center of the image contains a point within the rectangle. This point along with the previous were meant to simulate centering and scaling the rectangles. This should make the positional encoding easier.
 
-{{< figure src="images/CenteredRectangle.png" width="800" caption="" align="center">}}
+{{< figure src="images/CenteredRectangle.png" width="200" caption="" align="center">}}
 
 - Selected patches that correspond to unmasked regions are now centered along points on the edges of the rectangle. This more closely corresponds with the expected application of this model: *images that are represented as a sparse set of junctions*. 
 
@@ -49,7 +49,7 @@ With these small changes, the model performs much better. The accuracy of this m
 ## A example practical application
 
 In order to test this model on a semi-practical set of toy problems, we extend the previous results to a set of occluded rectangles.
-{{< figure src="images/MaskedRectangle.png" width="800" caption="Same rectangle as shown above, but the area in gray is not sampled" align="center">}}
+{{< figure src="images/MaskedRectangle.png" width="200" caption="Same rectangle as shown above, but the area in gray is not sampled" align="center">}}
 
 In this case all input locations randomly lie along the rectangle edge, but exclude points that are within the masked region. The model is then queried with points inside the masked region, resulting in inpainting using a sparse set of points in the image.
 
